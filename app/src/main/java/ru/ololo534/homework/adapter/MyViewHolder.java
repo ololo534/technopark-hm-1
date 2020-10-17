@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ru.ololo534.homework.R;
 
-
+//ViewHolder for RecycleView
 class MyViewHolder extends RecyclerView.ViewHolder {
     public final TextView myValue;
     public final CardView myCardView;

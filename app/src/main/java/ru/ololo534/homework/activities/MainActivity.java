@@ -14,19 +14,22 @@ import ru.ololo534.homework.fragments.ListFragment;
 
 public class MainActivity extends AppCompatActivity implements ItemViewInterface{
 
-    private static final String DATA_LIST_ARG_NAME = "data_list";
+    private static final String DATA_LIST_ARG = "data_list";
 
+    //Create single activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Check Instance
         if (savedInstanceState == null) {
             setupBasicFragment();
         } else {
-            Data.getInstance().setData(savedInstanceState.<Data.ItemList>getParcelableArrayList(DATA_LIST_ARG_NAME));
+            Data.getInstance().setData(savedInstanceState.<Data.ItemList>getParcelableArrayList(DATA_LIST_ARG));
         }
     }
 
+    //Create Fragment with RecyclerView
     private void setupBasicFragment() {
         getSupportFragmentManager()
                 .beginTransaction()
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements ItemViewInterface
                 .commit();
     }
 
+    //Show item of list onClick
     @Override
     public void showItem(@NotNull Data.ItemList item) {
         getSupportFragmentManager()
@@ -43,9 +47,10 @@ public class MainActivity extends AppCompatActivity implements ItemViewInterface
                 .commit();
     }
 
+    //Save Instance
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList(DATA_LIST_ARG_NAME, Data.getInstance().getData());
+        outState.putParcelableArrayList(DATA_LIST_ARG, Data.getInstance().getData());
     }
 }

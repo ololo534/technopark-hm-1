@@ -12,9 +12,10 @@ import androidx.fragment.app.Fragment;
 
 import ru.ololo534.homework.R;
 
+//Fragment for single item
 public class ItemFragment extends Fragment {
     private static final String VALUE_ARG_NAME = "num", COLOR_ARG_NAME = "color";
-    private int mNumber, mNumColor;
+    private int myNumber, myNumColor;
 
     public ItemFragment() {}
 
@@ -31,8 +32,8 @@ public class ItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mNumber = getArguments().getInt(VALUE_ARG_NAME);
-            mNumColor = getArguments().getInt(COLOR_ARG_NAME);
+            myNumber = getArguments().getInt(VALUE_ARG_NAME);
+            myNumColor = getArguments().getInt(COLOR_ARG_NAME);
         }
     }
 
@@ -45,7 +46,7 @@ public class ItemFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextView textToPreview = view.findViewById(R.id.item_fragment);
-        textToPreview.setText(String.valueOf(mNumber));
-        textToPreview.setTextColor(mNumColor);
+        textToPreview.setText(String.valueOf(myNumber));
+        textToPreview.setTextColor(myNumColor);
     }
 }

@@ -21,6 +21,7 @@ import ru.ololo534.homework.activities.ItemViewInterface;
 import ru.ololo534.homework.adapter.ListAdapter;
 import ru.ololo534.homework.dataSourse.Data;
 
+//Fragment for list
 public class ListFragment extends Fragment {
 
     private RecyclerView myItemRecyclerView;

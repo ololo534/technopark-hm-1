@@ -11,6 +11,7 @@ import ru.ololo534.homework.R;
 import ru.ololo534.homework.activities.ItemViewInterface;
 import ru.ololo534.homework.dataSourse.Data;
 
+//Adapter for RecycleView
 public class ListAdapter extends RecyclerView.Adapter<MyViewHolder>{
 
     private final ArrayList<Data.ItemList> myData;

@@ -6,6 +6,7 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
+//ArrayList of Numbers
 public class Data {
 
     private static Data ourInstance;
@@ -78,6 +79,7 @@ public class Data {
             SetColor();
         }
 
+        //Change color of element
         private void SetColor() {
             if (myValue % 2 == 0) {
                 myItemColor = Color.RED;
